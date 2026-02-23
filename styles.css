@@ -325,12 +325,29 @@ a {
     padding: 0 clamp(12px, 3vw, 40px);
 }
 
-/* Landscape: single column for wider images */
-.portfolio__gallery--landscape {
+/* Landscape: single column, two images visible per screen */
+.portfolio__gallery.portfolio__gallery--landscape {
     grid-template-columns: 1fr;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
+    gap: clamp(24px, 5vw, 60px);
+    padding: 0 clamp(24px, 5vw, 60px);
 }
+
+.portfolio__gallery--landscape .portfolio__item {
+    height: calc(100vh - var(--nav-height) - clamp(48px, 10vw, 120px));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio__gallery--landscape .portfolio__item img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+}
+
 
 .portfolio__item {
     overflow: hidden;
@@ -357,13 +374,21 @@ a {
     transform: translateY(0);
 }
 
-/* Hover effect: dim all siblings, highlight hovered */
-.portfolio__gallery:hover .portfolio__item {
+/* Hover effect: only dim when hovering an actual photo, not the gap */
+.portfolio__gallery {
+    pointer-events: none;
+}
+
+.portfolio__item {
+    pointer-events: auto;
+}
+
+.portfolio__gallery:has(.portfolio__item:hover) .portfolio__item {
     opacity: 0.4;
     transition: opacity 0.4s ease;
 }
 
-.portfolio__gallery .portfolio__item:hover {
+.portfolio__gallery:has(.portfolio__item:hover) .portfolio__item:hover {
     opacity: 1;
 }
 

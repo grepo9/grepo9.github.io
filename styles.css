@@ -421,6 +421,18 @@ a {
     gap: 2.5rem;
 }
 
+@media (min-width: 768px) {
+    .about__inner {
+        flex-direction: row;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .about__bio {
+        text-align: left;
+    }
+}
+
 .about__portrait {
     width: 180px;
     height: 180px;

@@ -428,6 +428,10 @@ a {
         gap: 3rem;
     }
 
+    .about__text {
+        text-align: left;
+    }
+
     .about__bio {
         text-align: left;
     }

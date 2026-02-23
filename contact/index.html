@@ -4,21 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grant Chiu</title>
-    <link rel="icon" type="image/png" href="img/icons8-resume-website-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/icons8-resume-website-32.png" sizes="32x32">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
     <!-- Navigation -->
     <header class="nav">
-        <a href="index.html" class="nav__logo">Grant Chiu</a>
+        <a href="/" class="nav__logo">Grant Chiu</a>
         <nav class="nav__links" id="navLinks">
-            <a href="index.html">Portrait</a>
-            <a href="landscape.html">Landscape</a>
-            <a href="contact.html">Contact</a>
+            <a href="/">Portrait</a>
+            <a href="/landscape">Landscape</a>
+            <a href="/contact">Contact</a>
             <a href="https://www.instagram.com/arcu.raw" target="_blank" class="nav__instagram" aria-label="Instagram">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -37,23 +37,25 @@
     <!-- Fullscreen Mobile Nav Overlay -->
     <div class="nav-overlay" id="navOverlay">
         <nav class="nav-overlay__links">
-            <a href="index.html">Portrait</a>
-            <a href="landscape.html">Landscape</a>
-            <a href="contact.html">Contact</a>
+            <a href="/">Portrait</a>
+            <a href="/landscape">Landscape</a>
+            <a href="/contact">Contact</a>
         </nav>
     </div>
 
     <main>
-        <!-- Landscape Gallery -->
-        <section class="portfolio portfolio--landscape" id="landscape">
-            <div class="portfolio__gallery portfolio__gallery--landscape">
-                <figure class="portfolio__item fade-in">
-                    <img src="img/002.jpeg" alt="Photograph by Grant Chiu" loading="lazy">
-                </figure>
-                <figure class="portfolio__item fade-in">
-                    <img src="img/003.jpeg" alt="Photograph by Grant Chiu" loading="lazy">
-                </figure>
+        <!-- Contact -->
+        <section class="contact" id="contact">
+            <div class="about__inner">
+                <div class="about__portrait">
+                    <img src="/img/headshot.jpeg" alt="Portrait of Grant Chiu">
+                </div>
+                <p class="about__bio">Based in California, shooting with a Fujifilm X-T50 and the XF 16mm f/2.8 R lens.</p>
             </div>
+            <p>For inquiries, collaborations, or prints — get in touch.</p>
+            <span class="contact__email">grantc9150@gmail.com</span>
+            <br>
+            <span class="contact__email">(408) 679-1719</span>
         </section>
     </main>
 
@@ -69,12 +71,6 @@
         <p>&copy; Copyright<br>All Rights Reserved</p>
     </footer>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-label="Image lightbox" aria-hidden="true">
-        <button class="lightbox__close" aria-label="Close lightbox">&times;</button>
-        <img class="lightbox__img" src="" alt="">
-    </div>
-
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>

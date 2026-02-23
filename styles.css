@@ -335,10 +335,7 @@ a {
 }
 
 .portfolio__gallery--landscape .portfolio__item {
-    height: calc(100vh - var(--nav-height) - clamp(48px, 10vw, 120px));
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    aspect-ratio: 3 / 2;
 }
 
 .portfolio__gallery--landscape .portfolio__item img {

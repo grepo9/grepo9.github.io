@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kodak 200 | Grant Chiu</title>
+    <meta name="description" content="Kodak 200 film recipe photography by Grant Chiu, based in California.">
+    <meta property="og:title" content="Grant Chiu | Kodak 200">
+    <meta property="og:description" content="Kodak 200 film recipe photography by Grant Chiu, based in California.">
+    <meta property="og:image" content="https://grantchiu.com/img/kodak200/DSCF0209.JPG">
+    <meta property="og:url" content="https://grantchiu.com/kodak-200">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://grantchiu.com/kodak-200">
+    <link rel="icon" type="image/png" href="/img/tabicon-32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="nav">
+        <a href="/" class="nav__logo">Grant Chiu</a>
+        <nav class="nav__links" id="navLinks">
+            <a href="/">Black & White</a>
+            <a href="/kodak-200">Kodak 200</a>
+            <a href="/classic-cuban">Classic Cuban</a>
+            <a href="/contact">Contact</a>
+            <a href="https://www.instagram.com/arcu.raw" target="_blank" class="nav__instagram" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+        </nav>
+        <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Fullscreen Mobile Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay">
+        <nav class="nav-overlay__links">
+            <a href="/">Black & White</a>
+            <a href="/kodak-200">Kodak 200</a>
+            <a href="/classic-cuban">Classic Cuban</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Kodak 200 Gallery -->
+        <section class="portfolio portfolio--split" id="kodak-200">
+            <div class="portfolio__split">
+                <div class="portfolio__split-left">
+                    <figure class="portfolio__item">
+                        <img src="/img/kodak200/DSCF0231.JPG" alt="Photograph by Grant Chiu">
+                    </figure>
+                </div>
+                <div class="portfolio__split-right">
+                    <figure class="portfolio__item">
+                        <img src="/img/kodak200/DSCF0211.JPG" alt="Photograph by Grant Chiu">
+                    </figure>
+                    <figure class="portfolio__item">
+                        <img src="/img/kodak200/DSCF0210.JPG" alt="Photograph by Grant Chiu">
+                    </figure>
+                    <figure class="portfolio__item">
+                        <img src="/img/kodak200/DSCF0209.JPG" alt="Photograph by Grant Chiu">
+                    </figure>
+                    <figure class="portfolio__item">
+                        <img src="/img/kodak200/DSCF0225.JPG" alt="Photograph by Grant Chiu">
+                    </figure>
+                    <figure class="portfolio__item">
+                        <img src="/img/kodak200/DSCF0237.JPG" alt="Photograph by Grant Chiu">
+                    </figure>
+                    <figure class="portfolio__item">
+                        <img src="/img/kodak200/DSCF0226.JPG" alt="Photograph by Grant Chiu">
+                    </figure>
+                    <figure class="portfolio__item">
+                        <img src="/img/kodak200/DSCF0239.JPG" alt="Photograph by Grant Chiu">
+                    </figure>
+                    <figure class="portfolio__item">
+                        <img src="/img/almaden.jpg" alt="Photograph by Grant Chiu">
+                    </figure>
+                    <figure class="portfolio__item">
+                        <img src="/img/002.jpeg" alt="Photograph by Grant Chiu">
+                    </figure>
+                    <figure class="portfolio__item">
+                        <img src="/img/003.jpeg" alt="Photograph by Grant Chiu">
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="https://www.instagram.com/arcu.raw" target="_blank" class="footer__instagram" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+        <p>&copy; Copyright<br>All Rights Reserved</p>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-label="Image lightbox" aria-hidden="true">
+        <button class="lightbox__close" aria-label="Close lightbox">&times;</button>
+        <img class="lightbox__img" src="" alt="">
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

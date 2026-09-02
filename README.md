@@ -1,2 +1,2 @@
-# grepo9.github.io
+# grantchiu.com
 My photography portfolio. [Visit my website!](https://grantchiu.com)

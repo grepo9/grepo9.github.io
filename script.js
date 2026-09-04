@@ -7,7 +7,6 @@
         const isOpen = navOverlay.classList.toggle('open');
         hamburger.classList.toggle('active');
         hamburger.setAttribute('aria-expanded', isOpen);
-        document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     // Close overlay when a nav link is clicked
@@ -16,8 +15,16 @@
             navOverlay.classList.remove('open');
             hamburger.classList.remove('active');
             hamburger.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
         });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!navOverlay.classList.contains('open')) return;
+        if (navOverlay.contains(e.target) || hamburger.contains(e.target)) return;
+
+        navOverlay.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
     });
 
     // --- Nav background on scroll ---
@@ -70,6 +77,12 @@
         if (e.target === lightbox) closeLightbox();
     });
     document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navOverlay.classList.contains('open')) {
+            navOverlay.classList.remove('open');
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
+
         if (e.key === 'Escape' && lightbox.classList.contains('open')) {
             closeLightbox();
         }

@@ -156,53 +156,118 @@ a {
     transform: translateY(-6.5px) rotate(-45deg);
 }
 
-/* Fullscreen nav overlay */
+/* Collapsible nav panel */
 .nav-overlay {
     position: fixed;
-    inset: 0;
-    z-index: 99;
-    background: var(--color-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    top: calc(var(--nav-height) / 2);
+    right: clamp(4.25rem, 4vw + 2.75rem, 5.75rem);
+    z-index: 102;
+    width: auto;
+    max-width: calc(100vw - 6rem);
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
+    transform: translateY(-50%) translateX(18px) scaleX(0.92);
+    transform-origin: top right;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
 }
 
 .nav-overlay.open {
     opacity: 1;
     visibility: visible;
+    transform: translateY(-50%) translateX(0) scaleX(1);
+    pointer-events: auto;
 }
 
 .nav-overlay__links {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 2.5rem;
+    gap: 0.25rem;
+    white-space: nowrap;
 }
 
 .nav-overlay__links a {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    font-weight: 300;
-    letter-spacing: 0.15em;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    opacity: 0.6;
-    transition: opacity var(--transition-speed);
+    opacity: 0.78;
+    padding: 0.8rem 0.95rem;
+    border-radius: 12px;
+    transition: opacity var(--transition-speed), background-color var(--transition-speed);
+}
+
+.nav-overlay__links .nav__link--meta {
+    margin-left: 0.45rem;
+    padding-left: 1.2rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.14);
+    opacity: 0.62;
+}
+
+.nav-overlay__links .nav__link--icon {
+    justify-content: center;
+    min-width: 46px;
+    padding-right: 0.85rem;
+}
+
+.nav-overlay__links .nav__link--icon svg {
+    display: block;
 }
 
 .nav-overlay__links a:hover {
     opacity: 1;
+    background: rgba(255, 255, 255, 0.06);
 }
 
-/* Desktop: show inline links, hide hamburger */
-@media (min-width: 768px) {
-    .nav__links {
-        display: flex;
+@media (max-width: 767px) {
+    .nav-overlay {
+        top: calc(var(--nav-height) + 0.5rem);
+        right: 1rem;
+        left: auto;
+        width: min(280px, calc(100vw - 1.5rem));
+        max-width: none;
+        padding: 1rem 1.1rem;
+        transform: translateY(0) translateX(18px) scaleX(0.92);
     }
 
-    .nav__hamburger {
-        display: none;
+    .nav-overlay.open {
+        transform: translateY(0) translateX(0) scaleX(1);
+    }
+
+    .nav-overlay__links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.35rem;
+        white-space: normal;
+    }
+
+    .nav-overlay__links a {
+        display: block;
+    }
+
+    .nav-overlay__links .nav__link--meta {
+        margin-left: 0;
+        padding-left: 0.95rem;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        margin-top: 0.35rem;
+        padding-top: 1rem;
+    }
+
+    .nav-overlay__links .nav__link--icon {
+        justify-content: flex-start;
+        min-width: 0;
+        padding-right: 0.95rem;
     }
 }
 
@@ -361,6 +426,33 @@ a {
     object-fit: cover;
 }
 
+.portfolio--portrait {
+    min-height: calc(100vh - var(--nav-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--nav-height) + 0.5rem) clamp(0.5rem, 2vw, 1.5rem) 1rem;
+}
+
+.portfolio__gallery.portfolio__gallery--portrait {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0;
+}
+
+.portfolio__gallery--portrait .portfolio__item {
+    width: min(100%, 1260px);
+}
+
+.portfolio__gallery--portrait .portfolio__item img {
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - var(--nav-height) - 1rem);
+    object-fit: contain;
+}
+
 
 .portfolio__item {
     overflow: hidden;
@@ -419,6 +511,14 @@ a {
     .portfolio__gallery.portfolio__gallery--fullscreen {
         gap: 4px;
         padding: 0;
+    }
+
+    .portfolio__gallery.portfolio__gallery--portrait {
+        max-width: 1400px;
+    }
+
+    .portfolio__gallery--portrait .portfolio__item {
+        width: min(100%, 1360px);
     }
 }
 
